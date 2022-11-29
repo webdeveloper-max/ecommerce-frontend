@@ -4,25 +4,56 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
   clearErrors,
   getProductDetails,
-  
+  newReview
 } from "../../actions/ProductActions";
 import MetaData from '../../more/Metadata'
 import Carousel from 'react-material-ui-carousel';
 import "./ProductDetails.css";
-import {useAlert} from ""
-
-
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../../Footer";
+import BottomTab from "../../more/BottomTab";
+import Loading from "../../more/Loader";
+import { Rating } from "@material-ui/lab"
+import { addItemsToCart } from "../../actions/CartAction";
+import { addFavouriteItemsToCart } from "../../actions/FavouriteAction";
+import { NEW_REVIEW_RESET } from "../../constans/ProductConstans";
+import ReviewCard from "./ReviewCard.jsx";
 
 
 
 const ProductDetails = ({match}) => {
 
   const dispatch = useDispatch();
-  const { product, error } = useSelector(
+  const { product,loading, error } = useSelector(
     (state) => state.productDetails
   );
+  const { isAuthenticated } = useSelector((state) => state.user);
+
+  const reviewSubmitHandler = (e) => {
+    e.preventDefault();
+
+    const myForm = new FormData();
+
+    myForm.set("rating", rating);
+    myForm.set("comment", comment);
+    myForm.set("productId", match.params.id);
+
+    
+    {
+      isAuthenticated !== true ? window.history.push(`/login?redirect=/`) : <></>;
+    }
+
+
+    dispatch(newReview(myForm));
+
+    {
+      comment.length === 0
+        ? toast.error("Please fill the comment box")
+        : toast.success("Review done successfully reload for watch it");
+    }
+    dispatch({ type: NEW_REVIEW_RESET });
+  };
 
   useEffect(() => {
     if (error) {
@@ -30,13 +61,19 @@ const ProductDetails = ({match}) => {
       dispatch(clearErrors());
     }
    dispatch(getProductDetails(match.params.id));
-  }, [ error]);
-
+  }, [ dispatch, match.params.id, error, alert]);
+  const options = {
+    value: product.ratings,
+    readOnly: true,
+    precision: 0.5,
+  };
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
 
   const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => {
-    //if (product.Stock <= quantity) return toast.error("Product stock limited");
+    if (product.Stock <= quantity) return toast.error("Product stock limited");
     const qty = quantity + 1;
     setQuantity(qty);
   };
@@ -45,9 +82,27 @@ const ProductDetails = ({match}) => {
     const qty = quantity - 1;
     setQuantity(qty);
   };
+  const addToCartHandler = () => {
+    if (product.Stock > 0) {
+      dispatch(addItemsToCart(match.params.id, quantity));
+      toast.success("Product Added to cart");
+    } else {
+      toast.error("Product stock limited");
+    }
+  };
+  const addToFavouriteHandler = () => {
+    dispatch(addFavouriteItemsToCart(match.params.id, quantity));
+    toast.success("Product Added to Favourites");
+  };
+
+ 
   return (
     <>
-    <MetaData title={`${product.name}`} /> 
+      {loading ? (
+        <Loading />
+      ) : (
+    <>
+    <MetaData title={`${product.name}`} />  
     <Header/>
     <div className="ProductDetails">
             <div className="first__varse">
@@ -68,7 +123,7 @@ const ProductDetails = ({match}) => {
                 <h2>{product.name}</h2>
               </div>
               <div className="detailsBlock-2">
-              {/* <Rating {...options} /> */}
+               <Rating {...options} /> 
                 <span>({product.numOfReviews} Reviews)</span>
               </div>
               <div className="detailsBlock">
@@ -86,7 +141,7 @@ const ProductDetails = ({match}) => {
                   <span className="quantity">Quantity</span>
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQuantity}>-</button>
-                    <input type="number" readOnly  />
+                    <input type="number" readOnly value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div>{" "}
                 </div>
@@ -119,7 +174,7 @@ const ProductDetails = ({match}) => {
                       cursor: "pointer",
                       padding: "15px 5px",
                     }}
-                    //onClick={addToFavouriteHandler}
+                    onClick={addToFavouriteHandler}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -140,13 +195,13 @@ const ProductDetails = ({match}) => {
                   </div>
 
                   <div
-                    className="pointer flex"
+                    className="/ const alert=useAlert()pointer flex"
                     style={{
                       padding: "10px 5px",
                       alignItems: "center",
                       backgroundColor: "#E4EAEC",
                     }}
-                    //onClick={addToCartHandler}
+                    onClick={addToCartHandler}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +250,7 @@ const ProductDetails = ({match}) => {
                 padding: "1vmax",
               }}
             >
-              {/* {product.reviews && product.reviews[0] ? (
+              {product.reviews && product.reviews[0] ? (
                 <div className="review__option">
                   {product.reviews &&
                     product.reviews.map((review) => (
@@ -211,7 +266,7 @@ const ProductDetails = ({match}) => {
                 >
                   No Reviews Yet *
                 </p>
-              )} */}
+              )}
               <div
                 style={{
                   padding: "0px 2vmax",
@@ -248,11 +303,11 @@ const ProductDetails = ({match}) => {
                     >
                       Your Rating*
                     </span>
-                    {/* <Rating 
+                    <Rating 
                       onChange={(e) => setRating(e.target.value)}
                       value={rating}
                       size="large"
-                    /> */}
+                    />
                     <div
                       style={{
                         display: "flex",
@@ -265,8 +320,8 @@ const ProductDetails = ({match}) => {
                   cols="30"
                   rows="6"
                   placeholder="Comment *"
-                  //value={comment}
-                  //onChange={(e) => setComment(e.target.value)}
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
                   style={{
                     maxWidth: "100%",
                     color: "#111",
@@ -293,15 +348,31 @@ const ProductDetails = ({match}) => {
                     cursor: "pointer",
                     color: "#fff",
                   }}
-                  //onClick={reviewSubmitHandler}
+                  onClick={reviewSubmitHandler}
                 >
                   Submit
                 </button>
               </div>
             </div> 
           </div>
+          <ToastContainer
+            position="bottom-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          <Footer />
+          <BottomTab />
+
     </>
+      )}
+      </>
   )
-}
+  }
 
 export default ProductDetails

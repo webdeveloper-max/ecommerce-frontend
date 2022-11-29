@@ -1,9 +1,25 @@
 import React from 'react'
 import "./Header.css";
 import {Link} from "react-router-dom";
+import { useRef } from 'react';
+import { useSelector } from "react-redux";
+
+
 
 const Header = () => {
+const { cartItems } = useSelector((state) => state.cart);
+const { favouriteItems } = useSelector((state) => state.favourite);
 
+  const switcherTab = useRef(null);
+  
+  window.addEventListener("scroll", () =>{
+  //   if(window.pageYOffset > 100){
+  //       document.querySelector(".navbar").classList.add("active");
+  //   }
+  //   else{
+  //     document.querySelector(".navbar").classList.remove("active");
+  //   }
+   })
   return (
     <div className="Header">
    
@@ -74,7 +90,7 @@ const Header = () => {
       </div>
     </div>
     {/* Header Navbar */}
-    <div className="navbar flex pz__10 space__beetween" >
+    <div className="navbar flex pz__10 space__beetween"ref={switcherTab} >
       <div
        className="navigation"
        style={{
@@ -101,9 +117,7 @@ const Header = () => {
           <Link to="/Products">
             <li>Products</li>
           </Link>
-          <Link to="/creator">
-            <li>Become A Seller</li>
-          </Link>
+          
           <Link to="/faq">
             <li>Users Rules</li>
           </Link>
@@ -156,7 +170,7 @@ const Header = () => {
               right: "3.5%",
             }}
           >
-            
+            <span>{favouriteItems.length}</span>
           </div>
         </div>
         <div className="cart__items flex align__items__center">
@@ -188,7 +202,7 @@ const Header = () => {
                 right: "3.5%",
               }}
             >
-             <span>5</span> 
+             <span>{cartItems.length}</span> 
           </div>
         </div>
         </div>

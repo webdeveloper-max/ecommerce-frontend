@@ -1,8 +1,12 @@
 import React from 'react'
-//import { Rating } from "@material-ui/lab";
+import { Rating } from "@material-ui/lab";
 import {Link} from "react-router-dom"
 const ProductCard = ({ product }) => {
-  
+  const options = {
+    value: product.ratings,
+    readOnly: true,
+    precision: 0.5,
+  };
   return (
     <>
       <Link className="ProductCard" to={`/product/${product._id}`}>
@@ -13,7 +17,7 @@ const ProductCard = ({ product }) => {
             />
             <p className="productName">{product.name}</p>
             <div>
-           
+            <Rating {...options}/>
               <span>({product.numOfReviews} Reviews)</span>
             </div>
             <div
