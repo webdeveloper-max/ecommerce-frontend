@@ -110,7 +110,7 @@ import {
       }
     };
   
-    // All Orders ------ Admin
+  
     export const allOrdersReducer = (state = { orders: [] }, action) => {
       switch (action.type) {
         case ALL_ORDERS_REQUEST:

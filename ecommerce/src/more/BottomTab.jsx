@@ -1,7 +1,7 @@
 import React from "react";
     import "./BottomTab.css";
     import { Link } from "react-router-dom";
-    //import { useSelector } from "react-redux";
+    import { useSelector } from "react-redux";
     import HomeIcon from "@material-ui/icons/Home";
     import SearchIcon from '@material-ui/icons/Search';
     import LocalMallIcon from '@material-ui/icons/LocalMall';

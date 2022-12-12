@@ -1,31 +1,32 @@
-import React from 'react'
+import React, { useRef } from "react";
 import "./Header.css";
-import {Link} from "react-router-dom";
-import { useRef } from 'react';
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-
 
 const Header = () => {
 const { cartItems } = useSelector((state) => state.cart);
 const { favouriteItems } = useSelector((state) => state.favourite);
 
-  const switcherTab = useRef(null);
+const switcherTab = useRef(null);
   
-  window.addEventListener("scroll", () =>{
-  //   if(window.pageYOffset > 100){
-  //       document.querySelector(".navbar").classList.add("active");
-  //   }
-  //   else{
-  //     document.querySelector(".navbar").classList.remove("active");
-  //   }
-   })
+window.addEventListener("scroll", () =>{
+  if(window.pageYOffset > 100){
+      document.querySelector(".navbar").classList.add("active");
+  }
+  else{
+    document.querySelector(".navbar").classList.remove("active");
+  }
+})
+
   return (
     <div className="Header">
-   
+    
     <div className="Header__topbar space__beetween">
-      <h1>Meloyan shoes</h1>
-      {/* Topbar Middle */}
+      
+      <div>
+      <h1>Shoe shop</h1>
+      </div>
+      
 
       <div
         className="searchBoxHome"
@@ -34,26 +35,7 @@ const { favouriteItems } = useSelector((state) => state.favourite);
           position: "relative",
         }}
       >
-        <div
-          className="inputBox"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            height: "30px",
-            width: "100%",
-            background: "tomato",
-            overflow: "hidden",
-            
-          }}
-        >
-          <span
-            style={{
-              color: "#fff",
-            }}
-          >
-            Welcome to our shop...You can find  here the best products ever....
-          </span>
-        </div>
+        
       </div>
 
       <div
@@ -89,8 +71,8 @@ const { favouriteItems } = useSelector((state) => state.favourite);
         </span>
       </div>
     </div>
-    {/* Header Navbar */}
-    <div className="navbar flex pz__10 space__beetween"ref={switcherTab} >
+    
+    <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
       <div
        className="navigation"
        style={{
@@ -117,13 +99,6 @@ const { favouriteItems } = useSelector((state) => state.favourite);
           <Link to="/Products">
             <li>Products</li>
           </Link>
-          
-          <Link to="/faq">
-            <li>Users Rules</li>
-          </Link>
-          <Link to="/contact">
-            <li>Contact</li>
-          </Link>
         </ul>
       </div>
 
@@ -149,7 +124,7 @@ const { favouriteItems } = useSelector((state) => state.favourite);
               width="25"
               height="25"
               fill="currentColor"
-              className="bi bi-heart pxz__20 black"
+               className="bi bi-heart pxz__20 black"
               viewBox="0 0 16 16"
             >
               <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
@@ -202,9 +177,9 @@ const { favouriteItems } = useSelector((state) => state.favourite);
                 right: "3.5%",
               }}
             >
-             <span>{cartItems.length}</span> 
+              <span>{cartItems.length}</span>
+            </div>
           </div>
-        </div>
         </div>
         <div className="user__account flex pointer">
           <Link to="/login">
@@ -222,8 +197,9 @@ const { favouriteItems } = useSelector((state) => state.favourite);
         </div>
       </div>
     </div>
- </div> 
+  </div>
+   
   );
 };
 
-  export default Header;
+export default Header;

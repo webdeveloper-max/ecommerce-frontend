@@ -145,12 +145,12 @@ h3:hover{
   min-width: 110px;
 }
 label.MuiFormControlLabel-root {
-  animation: none;
+  /* animation: none; */
   border: none;
 }
 
 label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated {
-  animation: none;
+  /* animation: none; */
   border: none;
 }
 .navbar.flex.pz__10{
@@ -181,7 +181,7 @@ label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLab
 }
 label.MuiRating-label {
   margin-top: .5vmax;
-  animation: none;
+  /* animation: none; */
   border: none;
   width: unset;
   height: unset;

@@ -22,7 +22,7 @@ import ReviewCard from "./ReviewCard.jsx";
 
 
 
-const ProductDetails = ({match}) => {
+const ProductDetails = ({match, history}) => {
 
   const dispatch = useDispatch();
   const { product,loading, error } = useSelector(
@@ -39,14 +39,13 @@ const ProductDetails = ({match}) => {
     myForm.set("comment", comment);
     myForm.set("productId", match.params.id);
 
-    
+    // eslint-disable-next-line
     {
-      isAuthenticated !== true ? window.history.push(`/login?redirect=/`) : <></>;
+      isAuthenticated !== true ? history.push(`/login?redirect=/`) : <></>;
     }
 
-
     dispatch(newReview(myForm));
-
+// eslint-disable-next-line
     {
       comment.length === 0
         ? toast.error("Please fill the comment box")
@@ -57,11 +56,11 @@ const ProductDetails = ({match}) => {
 
   useEffect(() => {
     if (error) {
-      alert.error(error);
+      toast.error(error);
       dispatch(clearErrors());
     }
    dispatch(getProductDetails(match.params.id));
-  }, [ dispatch, match.params.id, error, alert]);
+  }, [ dispatch, match.params.id, error]);
   const options = {
     value: product.ratings,
     readOnly: true,
@@ -132,7 +131,7 @@ const ProductDetails = ({match}) => {
                     display: "flex",
                   }}
                 >
-                  <h1>{`AMD${product.price}`}</h1>
+                  <h1>{`$${product.price}`}</h1>
                   <h1 className="discountPrice">
                     {product.offerPrice > 0 ? `$${product.offerPrice}` : ""}
                   </h1>
@@ -195,7 +194,7 @@ const ProductDetails = ({match}) => {
                   </div>
 
                   <div
-                    className="/ const alert=useAlert()pointer flex"
+                    className="pointer flex"
                     style={{
                       padding: "10px 5px",
                       alignItems: "center",
@@ -230,7 +229,7 @@ const ProductDetails = ({match}) => {
               </div>
             </div>
           </div>
-          Reviews
+          
           <div className="reviews__heading">
             <h1
               style={{
@@ -244,7 +243,7 @@ const ProductDetails = ({match}) => {
             </h1>
           </div>
            <div>
-            Reviews
+          
             <div
               style={{
                 padding: "1vmax",
@@ -372,7 +371,7 @@ const ProductDetails = ({match}) => {
     </>
       )}
       </>
-  )
-  }
+  );
+  };
 
-export default ProductDetails
+export default ProductDetails;

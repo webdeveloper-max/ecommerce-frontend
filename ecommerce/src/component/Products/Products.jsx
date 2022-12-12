@@ -8,15 +8,17 @@ import { clearErrors, getProduct } from "../../actions/ProductActions";
 import Pagination from "react-js-pagination";
 import "./Product.css";
 import Typography from"@material-ui/core/Typography"
-//i//mport { useAlert } from "react-alert";
+// import { useAlert } from "react-alert";
 import MetaData from "../../more/Metadata";
-//import BottomTab from "../../more/BottomTab";
+import BottomTab from "../../more/BottomTab";
 
 const categories = [
     "Personal",
     "cloth",
     "Ladies Cloth",
-    "Shoes",
+    "Gift",
+    "Food",
+    "Electronics",
     "Sports",
     "Others"
 ]
@@ -45,11 +47,11 @@ const Products = ({ match }) => {
 
   useEffect(() => {
       if(error){
-           alert(error);
+          alert(error);
           dispatch(clearErrors())
       }
     dispatch(getProduct(keyword, currentPage,category));
-  }, [dispatch, keyword,currentPage,category,alert,error]); 
+  }, [dispatch, keyword,currentPage,category,error]); 
 
 
 
@@ -62,7 +64,7 @@ const Products = ({ match }) => {
         <MetaData title="Products" />
           <Header />
           <div>
-           {Products.length === 0 ? 
+           {products.length === 0 ? 
             ""
             :
             <h2
@@ -112,7 +114,7 @@ const Products = ({ match }) => {
                   </li>
               </div>
 
-             {Products.length === 0 ?
+             {products.length === 0 ?
              <span style={{
                display:"block",
                padding:"30px 0",
@@ -165,7 +167,7 @@ const Products = ({ match }) => {
               </div>
           </div>
           <Footer />
-          {/* <BottomTab /> */}
+          <BottomTab />
         </>
       )}
     </>

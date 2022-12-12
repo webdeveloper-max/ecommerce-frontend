@@ -13,13 +13,7 @@ img.profile__img {
     object-fit: cover;
     border: 4px solid #2f6ddf;
 }
-.edit__profile{
-    color: #0a8ef7;
-    font-family: "Poppins";
-    width: 100%;
-    text-align: end;
-    padding: .5vmax 0px;
-}
+
 .information {
     display: flex;
     flex-direction: column;

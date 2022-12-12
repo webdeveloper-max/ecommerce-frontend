@@ -21,7 +21,7 @@ import {
 } from "../constans/OrderConstans";
 import { CLEAR_ERRORS } from "../constans/userConstans";
 
-// Create Order
+
 export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
@@ -43,7 +43,7 @@ export const createOrder = (order) => async (dispatch) => {
 };
 
 
-// My Orders
+
 export const myOrders = () => async (dispatch) => {
     try {
       dispatch({ type: MY_ORDERS_REQUEST });
@@ -59,7 +59,7 @@ export const myOrders = () => async (dispatch) => {
     }
   };
 
-// Get Order Details
+
 export const getOrderDetails = (id) => async (dispatch) => {
     try {
       dispatch({ type: ORDER_DETAILS_REQUEST });
@@ -76,7 +76,6 @@ export const getOrderDetails = (id) => async (dispatch) => {
   };
 
 
-// All order  -----Admin
 export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
@@ -92,7 +91,7 @@ export const getAllOrders = () => async (dispatch) => {
   }
 };
 
-// Update Order
+
 export const updateOrder = (id, order) => async (dispatch) => {
   try {
     dispatch({ type: UPDATE_ORDER_REQUEST });
@@ -117,7 +116,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
   }
 };
 
-// Delete Order
+
 export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDER_REQUEST });
@@ -136,7 +135,7 @@ export const deleteOrder = (id) => async (dispatch) => {
 
 
  
-// Clearing Errors
+
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: CLEAR_ERRORS });
 };

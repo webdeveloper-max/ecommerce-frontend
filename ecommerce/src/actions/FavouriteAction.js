@@ -1,8 +1,7 @@
-import { ADD_TO_FAVOURITE, ADD_TO_FAVOURITE_OFFER, REMOVE_FROM_FAVOURITE, REMOVE_FROM_FAVOURITE_OFFER}
+import { ADD_TO_FAVOURITE, REMOVE_FROM_FAVOURITE}
 from "../constans/FavouriteConstans";
 import axios from "axios";
 
-// Add to favourites
 export const addFavouriteItemsToCart = (id,quantity) => async (dispatch, getState) =>{
     const {data} = await axios.get(`/api/v2/product/${id}`);
 
@@ -21,7 +20,7 @@ export const addFavouriteItemsToCart = (id,quantity) => async (dispatch, getStat
     localStorage.setItem("favouriteItems", JSON.stringify(getState().favourite.favouriteItems));
 }
 
-// Delete from favourites
+
 export const deleteFavouriteItemsToCart = (id) => async (dispatch, getState) => {
     dispatch({
       type: REMOVE_FROM_FAVOURITE,

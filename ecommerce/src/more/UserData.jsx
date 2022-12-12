@@ -7,13 +7,11 @@ import PersonIcon from "@material-ui/icons/Person";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Support from "@material-ui/icons/ReportProblem"
 import HeartIcon from "@material-ui/icons/FavoriteBorder";
-import HeartActiveIcon from "@material-ui/icons/Favorite";
 import HomeIcon from "@material-ui/icons/Home";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-//import { logout } from "../actions/userAction";
+import { logout } from "../actions/userAction";
 import { useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -65,8 +63,7 @@ const UserData = ({ user }) => {
       func: favourite,
     },
     { icon: <PersonIcon />, name: "Profile", func: account },
-    { icon: <Support />, name: "Report us", func: report },
-    // { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
+     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
   if (user.role === "admin") {
@@ -102,15 +99,10 @@ const UserData = ({ user }) => {
   function account() {
     history.push("/me");
   }
-
-  function report() {
-    history.push("/support");
+  function logoutUser() {
+    dispatch(logout());
+    toast.success("Logout Successfully");
   }
-
-//   function logoutUser() {
-//     dispatch(logout());
-//     alert("Logout Successfully");
-//   }
 
   return (
     <>
@@ -123,17 +115,8 @@ const UserData = ({ user }) => {
         open={open}
         direction="down"
         className="speedDial"
-        useRef={scroolEffect}
-        // icon={
-        //   // <img
-        //   //   className="speedDialIcon"
-        //   //   src={user.avatar.url ? user.avatar.url : ("/profile.png")}
-        //   //   alt="Profile"
-        //   //   style={{
-        //   //     position:"fixed"
-        //   //   }}
-        //   // />
-        // }
+        ref={scroolEffect}
+        
       >
         {options.map((item) => (
           <SpeedDialAction

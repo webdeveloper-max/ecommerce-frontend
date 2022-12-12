@@ -19,17 +19,17 @@ const Shipping = ({ history }) => {
   const { shippingInfo } = useSelector((state) => state.cart);
 
   const [address, setAddress] = useState(shippingInfo.address);
-  // eslint-disable-next-line
+ 
   const [state, setState] = useState(shippingInfo.state);
   const [country, setCountry] = useState(shippingInfo.country);
-  // eslint-disable-next-line
+  
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 
   const shippingSubmit = (e) => {
     e.preventDefault();
 
-    if (phoneNo.length < 11 || phoneNo.length > 11) {
-      toast.error("Phone Number should be 11digits");
+    if (phoneNo.length < 9 || phoneNo.length > 9) {
+      toast.error("Phone Number should be 9 digits");
       return;
     }
     dispatch(saveShippingInfo({ address, state, country, phoneNo }));
