@@ -177,12 +177,12 @@ const LoginSignup = ({ history, location }) => {
 
                 <div id="registerImage">
                   
-                  <input
+                  {/* <input
                     type="file"
                     name="avatar"
                     accept="image/*"
                     onChange={registerDataChange}
-                  />
+                  /> */}
                 </div>
                 <input type="submit" value="Register" className="signUpBtn" />
               </form>

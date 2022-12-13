@@ -8,7 +8,7 @@ import { clearErrors, getProduct } from "../../actions/ProductActions";
 import Pagination from "react-js-pagination";
 import "./Product.css";
 import Typography from"@material-ui/core/Typography"
-// import { useAlert } from "react-alert";
+
 import MetaData from "../../more/Metadata";
 import BottomTab from "../../more/BottomTab";
 
@@ -92,10 +92,10 @@ const Products = ({ match }) => {
               }}>
                   <Typography style={{fontSize:"1.2vmax",padding:"5px"}}>CHOOSE CATEGORIES</Typography>
                   <ul className="categoryBox">
-                      {categories.map((category) =>(
+                      {categories.map((category, index) =>(
                           <li
                           className="category-link"
-                          key={category}
+                          key={index}
                           onClick={() =>setCategory(category)}
                           type="checkbox">
                           {category}

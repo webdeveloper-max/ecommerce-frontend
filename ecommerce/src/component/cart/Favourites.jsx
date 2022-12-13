@@ -47,8 +47,8 @@ const Favourite = ({history}) => {
                 <p>Action</p>
                 </div>
                 {favouriteItems &&
-                favouriteItems.map((item) => (
-                    <div className="favouritesContainer" key={item.product}>
+                favouriteItems.map((item, index) => (
+                    <div className="favouritesContainer" key={index}>
                         <FavouriteItemsCard item={item} deleteFavouriteItems={deleteFavouriteItems} />
                     </div>
                 ))

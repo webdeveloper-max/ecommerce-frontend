@@ -65,8 +65,8 @@ const Cart = ({ history }) => {
             </div>
 
             {cartItems &&
-              cartItems.map((item) => (
-                <div className="cartContainer" key={item.product}>
+              cartItems.map((item, index) => (
+                <div className="cartContainer" key={index}>
                   <CartItemCard item={item} deleteCartItems={deleteCartItems} />
                   <div className="cartInput">
                     <button

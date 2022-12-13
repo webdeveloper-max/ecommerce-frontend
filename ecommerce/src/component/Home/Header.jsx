@@ -7,16 +7,16 @@ const Header = () => {
 const { cartItems } = useSelector((state) => state.cart);
 const { favouriteItems } = useSelector((state) => state.favourite);
 
-const switcherTab = useRef(null);
+// const switcherTab = useRef(null);
   
-window.addEventListener("scroll", () =>{
-  if(window.pageYOffset > 100){
-      document.querySelector(".navbar").classList.add("active");
-  }
-  else{
-    document.querySelector(".navbar").classList.remove("active");
-  }
-})
+// window.addEventListener("scroll", () =>{
+//   if(window.pageYOffset > 100){
+//       document.querySelector(".navbar").classList.add("active");
+//   }
+//   else{
+//     document.querySelector(".navbar").classList.remove("active");
+//   }
+// })
 
   return (
     <div className="Header">
@@ -72,7 +72,7 @@ window.addEventListener("scroll", () =>{
       </div>
     </div>
     
-    <div className="navbar flex pz__10 space__beetween" ref={switcherTab}>
+    <div className="navbar flex pz__10 space__beetween" >
       <div
        className="navigation"
        style={{

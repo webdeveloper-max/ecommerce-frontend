@@ -5,7 +5,7 @@ import Header from "../Home/Header";
 import Loading from "../../more/Loader";
 import MetaData from "../../more/Metadata";
 import "./About.css";
-//import BottomTab from "../../more/BottomTab";
+
 
 const About = () => {
     const { loading } = useSelector(
@@ -28,7 +28,7 @@ const About = () => {
         {/* 1st verse */}
         <div className="row flex">
           <div className="col__2">
-            <img src="https://thumbs.dreamstime.com/b/ladies-shoe-store-logos-situated-aqua-shopping-mall-algarve-picture-taken-th-october-34352982.jpg" />
+            <img src="https://thumbs.dreamstime.com/b/ladies-shoe-store-logos-situated-aqua-shopping-mall-algarve-picture-taken-th-october-34352982.jpg"alt="store" />
           </div>
           <div className="col__2">
             <div className="meta">
@@ -50,7 +50,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* 2nd verse */}
+        
         <div className="second">
           <div className="heading">
             <h2>What We Provide?</h2>
@@ -63,13 +63,11 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-1.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-1.svg" alt="style"/>
                 </div>
               <span>Best Prices & Offers</span>
               <p>
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form
+                There are many variations of passages 
               </p>
               </div>
             </div>
@@ -80,7 +78,7 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-2.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-2.svg"alt="shoes" />
                 </div>
               <span>Best  Quality</span>
               <p>
@@ -95,7 +93,7 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-3.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-3.svg"alt="delivery" />
                 </div>
               <span>Fast Delivery System</span>
               <p>
@@ -112,13 +110,11 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-4.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-4.svg" alt="return"/>
                 </div>
               <span>Easy Returns Service</span>
               <p>
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form
+                100% money back guaranty
               </p>
               </div>
             </div>
@@ -130,11 +126,11 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-5.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-5.svg"alt="nest" />
                 </div>
               <span>100% satisfication</span>
               <p>
-                We provide money back guaranty.
+                We provide the best quality
               </p>
               </div>
             </div>
@@ -146,13 +142,11 @@ const About = () => {
                     minHeight:"230px"
                 }}>
                 <div className="flex align__items__center justify__content__center image">
-              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-6.svg" />
+              <img src="http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-6.svg"alt="deal" />
                 </div>
               <span>Great Daily Deal</span>
               <p>
-                There are many variations of passages of Lorem Ipsum
-                available, but the majority have suffered alteration in some
-                form
+                
               </p>
               </div>
             </div>

@@ -73,8 +73,8 @@ const ConfirmOrder = ({ history }) => {
                  </div>
                   :
              <div className="confirmCartItemsContainer">
-             {cartItems.map((item) => (
-               <div key={item.product}>
+             {cartItems.map((item, index) => (
+               <div key={index}>
                  <img src={item.image} alt="Product" />
                  <Link to={`/product/${item.product}`}>
                    {item.name}
