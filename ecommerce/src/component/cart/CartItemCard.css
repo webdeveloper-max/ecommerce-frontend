@@ -1,17 +1,18 @@
 .CartItemCard {
     display: flex;
-    padding: 1vmax;
-    height: 8vmax;
+    padding: 9vmax;
+    height: 9vmax;
     align-items: flex-start;
     box-sizing: border-box;
   }
   .CartItemCard > img {
-    width: 5vmax;
+    width: 7vmax;
+    height:7vmax;
   }
   
   .CartItemCard > div {
     display: flex;
-    margin: 0.3vmax 1vmax;
+    margin: 0.1vmax 1vmax;
     flex-direction: column;
   }
   
@@ -22,14 +23,15 @@
   }
   
   .CartItemCard > div > span {
-    font: 300 0.9vmax "Roboto";
+    font: 300 1vmax "Roboto";
     color: rgba(24, 24, 24, 0.815);
   }
   
   .CartItemCard > div > p {
     color: #3BB77E;
-    font: 100 0.8vmax "Roboto";
+    font: 100 1vmax "Roboto";
     cursor: pointer;
+    
   }
   
   @media screen and (max-width: 600px) {
@@ -54,6 +56,6 @@
     }
   
     .CartItemCard > div > p {
-      font: 100 1.8vmax "Roboto";
+      font: 100 1.9vmax "Roboto";
     }
   }

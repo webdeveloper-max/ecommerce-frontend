@@ -65,8 +65,8 @@ const Cart = ({ history }) => {
             </div>
 
             {cartItems &&
-              cartItems.map((item, index) => (
-                <div className="cartContainer" key={index}>
+              cartItems.map((item) => (
+                <div className="cartContainer" key={item.product}>
                   <CartItemCard item={item} deleteCartItems={deleteCartItems} />
                   <div className="cartInput">
                     <button
@@ -76,7 +76,7 @@ const Cart = ({ history }) => {
                     >
                       -
                     </button>
-                    <input type="number" readOnly value={item.quantity} />
+                    <input  type="number" readOnly value={item.quantity} />
                     <button
                       onClick={() =>
                         increaseQuantity(

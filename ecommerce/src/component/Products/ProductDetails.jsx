@@ -141,7 +141,7 @@ const ProductDetails = ({match, history}) => {
                   <span className="quantity">Quantity</span>
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQuantity}>-</button>
-                    <input name="hover-feedback" type="number" readOnly={false} defaultValue={quantity} />
+                    <input  type="number" readOnly value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div>{" "}
                 </div>
