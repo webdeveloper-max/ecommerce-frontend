@@ -7,8 +7,7 @@ import ProductCard from "./ProductCard";
 import { clearErrors, getProduct } from "../../actions/ProductActions";
 import Pagination from "react-js-pagination";
 import "./Product.css";
-import Typography from"@material-ui/core/Typography"
-
+import Typography from"@material-ui/core/Typography";
 import MetaData from "../../more/Metadata";
 import BottomTab from "../../more/BottomTab";
 
@@ -17,7 +16,7 @@ const categories = [
     "cloth",
     "Ladies Cloth",
     "Gift",
-    "Food",
+    // "Food",
     "Electronics",
     "Sports",
     "Others"
@@ -92,26 +91,17 @@ const Products = ({ match }) => {
               }}>
                   <Typography style={{fontSize:"1.2vmax",padding:"5px"}}>CHOOSE CATEGORIES</Typography>
                   <ul className="categoryBox">
-                      {categories.map((category, index) =>(
+                      {categories.map((category) =>(
                           <li
                           className="category-link"
-                          key={index}
+                          key={category}
                           onClick={() =>setCategory(category)}
                           type="checkbox">
                           {category}
                           </li> 
                       ))}
                   </ul>
-                  <Typography style={{fontSize:"1.2vmax",padding:"5px"}}>QUICK LINKS</Typography>
-                  <li className="category-link">
-                      My Carts
-                  </li>
-                  <li className="category-link">
-                      Favourites Items
-                  </li>
-                  <li className="category-link">
-                      Go to Checkout
-                  </li>
+                  
               </div>
 
              {products.length === 0 ?

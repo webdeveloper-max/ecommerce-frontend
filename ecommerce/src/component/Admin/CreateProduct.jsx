@@ -24,7 +24,7 @@ const CreateProduct = ({ history }) => {
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [Stock, setStock] = useState(0);
-  const [discountPrice, setDiscountPrice] = useState("");
+  const [offerPrice, setOfferPrice] = useState("");
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
@@ -59,7 +59,7 @@ const CreateProduct = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
-    myForm.set("discountPrice", discountPrice);
+    myForm.set("offerPrice", offerPrice);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
@@ -118,7 +118,7 @@ const CreateProduct = ({ history }) => {
               <input
                 type="String"
                 placeholder="Discount Percent *optional"
-                onChange={(e) => setDiscountPrice(e.target.value)}
+                onChange={(e) => setOfferPrice(e.target.value)}
               />
             </div>
 

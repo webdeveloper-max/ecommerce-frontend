@@ -1,4 +1,4 @@
-shippingContainer {
+.shippingContainer {
     width: 100vw;
     max-width: 100%;
     display: flex;
@@ -57,7 +57,7 @@ shippingContainer {
   
   .shippingForm > div > svg {
     position: absolute;
-    transform: translateX(1vmax);
+   transform: translateX(1vmax); 
     font-size: 1.6vmax;
     color: rgba(0, 0, 0, 0.623);
   }

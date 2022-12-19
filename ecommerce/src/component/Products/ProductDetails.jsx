@@ -65,6 +65,7 @@ const ProductDetails = ({match, history}) => {
     value: product.ratings,
     readOnly: true,
     precision: 0.5,
+    
   };
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
@@ -140,7 +141,7 @@ const ProductDetails = ({match, history}) => {
                   <span className="quantity">Quantity</span>
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQuantity}>-</button>
-                    <input type="number" readOnly value={quantity} />
+                    <input name="hover-feedback" type="number" readOnly={false} defaultValue={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div>{" "}
                 </div>

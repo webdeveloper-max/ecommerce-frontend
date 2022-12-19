@@ -10,7 +10,7 @@ import UserData from './more/UserData';
 import { useSelector } from 'react-redux';
 import { loadUser } from './actions/userAction';
 import Store from "./store";
- import ProtectedRoute from './route/ProtectedRoutee';
+import ProtectedRoute from './route/ProtectedRoutee';
 import Profile from "./component/user/Profile";
 import About from './component/about/About';
 import Products from "./component/Products/Products";
@@ -25,8 +25,8 @@ import Payment from './component/cart/Payment';
 import {loadStripe} from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 import Success from './component/cart/Success';
-//import MyOrder from "./component/user/MyOrder";
-// import MyOrderDetails from "./component/user/MyOrderDetails";
+import MyOrder from "./component/user/MyOrder";
+import MyOrderDetails from "./component/user/MyOrderDetails";
  import MoreOptions from "./component/user/MoreOptions"
 import Dashboard from './component/Admin/Dashboard';
 import CreateProduct from './component/Admin/CreateProduct';
@@ -36,12 +36,6 @@ import AllOrder from './component/Admin/AllOrder';
 import UpdateOrder from './component/Admin/UpdateOrder';
 import AllUsers from './component/Admin/AllUsers';
 import AllReviews from './component/Admin/AllReviews';
-
-
-
-
-
-// import Notfound from "../../frontend/src/more/Notfound";
 
 function App() {
 
@@ -93,8 +87,8 @@ function App() {
          <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
          <ProtectedRoute exact path="/me" component={Profile} />
          <ProtectedRoute exact path="/success" component={Success} />
-         {/* <ProtectedRoute exact path="/orders" component={MyOrder} />
-         <ProtectedRoute exact path="/order/:id" component={MyOrderDetails} /> */}
+         <ProtectedRoute exact path="/orders" component={MyOrder} />
+         <ProtectedRoute exact path="/order/:id" component={MyOrderDetails} /> 
          <ProtectedRoute isAdmin={true} exact path="/dashboard" component={Dashboard} />
          <ProtectedRoute isAdmin={true} exact path="/admin/product" component={CreateProduct} />
          <ProtectedRoute isAdmin={true} exact path="/admin/products" component={AllProducts} />

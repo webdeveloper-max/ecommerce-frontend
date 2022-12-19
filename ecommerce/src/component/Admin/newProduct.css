@@ -21,7 +21,7 @@
     padding: 3vmax;
     justify-content: space-evenly;
     height: 70%;
-    width: 40vh;
+    width: 45vh;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
   }
@@ -41,7 +41,7 @@
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.267);
     border-radius: 4px;
-    font: 300 0.9vmax cursive;
+    font: 600 1.6vmax cursive;
     outline: none;
   }
   
@@ -64,10 +64,10 @@
     height: 5vh;
     border: none;
     margin: 0%;
-    font: 400 0.8vmax cursive;
+    font: 400 0.9vmax cursive;
     transition: all 0.5s;
     padding: 0 1vmax;
-    color: rgba(0, 0, 0, 0.623);
+    color: rgba(7, 7, 7, 0.623);
     background-color: rgb(255, 255, 255);
   }
   

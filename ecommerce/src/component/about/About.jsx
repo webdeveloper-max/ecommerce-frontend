@@ -25,7 +25,7 @@ const About = () => {
       }}
     >
       <div className="about__page">
-        {/* 1st verse */}
+        
         <div className="row flex">
           <div className="col__2">
             <img src="https://thumbs.dreamstime.com/b/ladies-shoe-store-logos-situated-aqua-shopping-mall-algarve-picture-taken-th-october-34352982.jpg"alt="store" />

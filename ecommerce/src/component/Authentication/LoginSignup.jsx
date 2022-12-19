@@ -75,7 +75,7 @@ const LoginSignup = ({ history, location }) => {
     if (isAuthenticated) {
       history.push(redirect);
     }
-  }, [dispatch, error, redirect, history, isAuthenticated]);
+  }, [dispatch, redirect, history, isAuthenticated]);
 
   const switchTabs = (e, tab) => {
     if (tab === "login") {
@@ -104,6 +104,7 @@ const LoginSignup = ({ history, location }) => {
             <div className="LoginSignUpBox">
               <div>
                 <div className="login_signUp_toggle">
+                  
                   <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
                   <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
                 </div>
@@ -138,7 +139,7 @@ const LoginSignup = ({ history, location }) => {
               <form
                 className="signUpForm"
                 ref={registerTab}
-                encType="multipart/form-data"
+                // encType="multipart/form-data"
                 onSubmit={registerSubmit}
               >
                 <div className="signUpName">
@@ -177,12 +178,7 @@ const LoginSignup = ({ history, location }) => {
 
                 <div id="registerImage">
                   
-                  {/* <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={registerDataChange}
-                  /> */}
+                  
                 </div>
                 <input type="submit" value="Register" className="signUpBtn" />
               </form>

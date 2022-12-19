@@ -24,12 +24,12 @@ export const login = (email, password) => async (dispatch) => {
     try {
       dispatch({ type: LOGIN_REQUEST });
   
-      const config = { headers: { "Content-Type": "application/json" } };
+      // const config = { headers: { "Content-Type": "application/json" } };
   
       const { data } = await axios.post(
         `/api/v2/login`,
         { email, password },
-        config
+        // config
       );
       dispatch({ type: LOGIN_SUCCESS, payload: data.user });
     } catch (error) {
@@ -42,9 +42,9 @@ export const login = (email, password) => async (dispatch) => {
     try {
       dispatch({ type: REGISTER_USER_REQUEST });
   
-      const config = { headers: { "Content-Type": "multipart/form-data" } };
-  
-      const { data } = await axios.post(`/api/v2/registration`, userData, config);
+      // const config = { headers: { "Content-Type": "multipart/form-data" } };
+
+      const { data } = await axios.post(`/api/v2/registration`, userData, );
   
       dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -58,7 +58,7 @@ export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({type: LOAD_USER_REQUEST});
              
-        //const config = { headers:{ "Content-Type": "application/json"} };
+        // const config = { headers:{ "Content-Type": "application/json"} };
   
         const {data} = await axios.get(
             `/api/v2/me`);
@@ -107,7 +107,7 @@ export const login = (email, password) => async (dispatch) => {
     }
   };
   
-  // get  User Details ----- Admin
+  
   export const getUserDetails = (id) => async (dispatch) => {
     try {
       dispatch({ type: USER_DETAILS_REQUEST });

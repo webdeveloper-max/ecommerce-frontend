@@ -50,19 +50,19 @@ const AllProducts = ({history}) => {
       }, [dispatch, deleteError,isDeleted, error, history]);
     
     const columns = [
-        { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
+        { field: "id", headerName: "Product ID", minWidth: 100, flex: 0.5 },
     
         {
           field: "name",
           headerName: "Name",
-          minWidth: 350,
-          flex: 1,
+          minWidth: 50,
+          flex: 0.5,
         },
         {
           field: "stock",
           headerName: "Stock",
           type: "number",
-          minWidth: 150,
+          minWidth: 50,
           flex: 0.3,
         },
     
@@ -70,8 +70,8 @@ const AllProducts = ({history}) => {
           field: "price",
           headerName: "Price",
           type: "number",
-          minWidth: 270,
-          flex: 0.5,
+          minWidth: 50,
+          flex: 0.3,
         },
     
         {

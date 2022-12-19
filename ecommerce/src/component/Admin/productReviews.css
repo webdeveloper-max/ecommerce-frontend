@@ -41,7 +41,7 @@
   
   .productReviewsForm > div > svg {
     position: absolute;
-    transform: translateX(1vmax);
+    /* transform: translateX(1vmax); */
     font-size: 1.6vmax;
     color: rgba(0, 0, 0, 0.623);
   }

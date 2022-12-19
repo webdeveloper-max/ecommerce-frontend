@@ -14,7 +14,8 @@
     height: 350px;
     object-fit: contain;
   }
-  .first__varse {margin: auto;}
+  .first__varse {margin: auto;
+  width:350px;}
   .varse__2{
     width: 50%;
     overflow: hidden;

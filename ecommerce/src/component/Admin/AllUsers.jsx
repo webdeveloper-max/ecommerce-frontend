@@ -49,19 +49,19 @@ const AllUsers = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted, message]);
 
   const columns = [
-    { field: "id", headerName: "User ID", minWidth: 180, flex: 0.8 },
+    { field: "id", headerName: "User ID", minWidth: 80, flex: 0.6 },
 
     {
       field: "email",
       headerName: "Email",
-      minWidth: 200,
-      flex: 1,
+      minWidth: 90,
+      flex: 0.6,
     },
     {
       field: "name",
       headerName: "Name",
-      minWidth: 150,
-      flex: 0.5,
+      minWidth: 50,
+      flex: 0.3,
     },
 
     {
@@ -87,9 +87,7 @@ const AllUsers = ({ history }) => {
       renderCell: (params) => {
         return (
           <Fragment>
-            <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
-              <EditIcon />
-            </Link>
+            
 
             <Button
               onClick={() =>

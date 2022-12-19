@@ -43,3 +43,6 @@ li.category-link{
     border-top: 1px solid #999;
     padding: 10px 10px;
 }
+.categoryBox{
+  height: fit-content;  
+}
