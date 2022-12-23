@@ -64,9 +64,9 @@
 .cartInput > button {
   border: none;
   background-color: #3BB77E;
-  padding: 0.5vmax;
+   padding: 0.5vmax; 
   cursor: pointer;
-  color: white;
+  color: rgb(14, 12, 12);
   transition: all 0.5s;
 }
 .cartInput > button:hover {
@@ -75,11 +75,11 @@
 
 .cartInput > input {
   border: none;
-  padding: 0.5vmax;
+  
   width: 1vmax;
-  text-align: center;
+   text-align: center; 
   outline: none;
-  font: 400 0.8vmax "Roboto";
+  font: 400 1vmax "Roboto";
   color: rgba(0, 0, 0, 0.74);
 }
 

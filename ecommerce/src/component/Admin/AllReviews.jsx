@@ -64,14 +64,14 @@ const AllReviews = ({ history }) => {
     {
       field: "user",
       headerName: "User",
-      minWidth: 200,
+      minWidth: 100,
       flex: 0.6,
     },
 
     {
       field: "comment",
       headerName: "Comment",
-      minWidth: 350,
+      minWidth: 150,
       flex: 1,
     },
 
@@ -79,8 +79,8 @@ const AllReviews = ({ history }) => {
       field: "rating",
       headerName: "Rating",
       type: "number",
-      minWidth: 180,
-      flex: 0.4,
+      minWidth: 50,
+      flex: 0.2,
 
       cellClassName: (params) => {
         return params.getValue(params.id, "rating") >= 3

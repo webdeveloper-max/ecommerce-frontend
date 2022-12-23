@@ -64,7 +64,9 @@ export const login = (email, password) => async (dispatch) => {
             `/api/v2/me`);
              
        dispatch({type: LOAD_USER_SUCCESS, payload: data.user });
-    } catch (error) {  
+    } 
+    catch (error) {  
+      
         dispatch({type: LOAD_USER_FAIL, payload: error.response.data.message});
     }
   }

@@ -85,7 +85,7 @@ const Home = () => {
                    paddingTop:"10px"
                  }}
                  >
-                 Get Free Shipping on all orders over 50.000 AMD
+                 Get Free Shipping on all orders over 99 $
                  </h2>
                </div>
                <div>

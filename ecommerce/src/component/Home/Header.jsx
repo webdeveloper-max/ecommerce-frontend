@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,24 +9,7 @@ const { favouriteItems } = useSelector((state) => state.favourite);
 
 
   
-window.addEventListener("scroll", () =>{
-  if(window.pageYOffset > 100){
-      document.querySelector(".navbar").classList.add("active");
-  }
-  else{
-    document.querySelector(".navbar").classList.remove("active");
-  }
-})
-const switcherTab = useRef(null);
-  
-window.addEventListener("scroll", () =>{
-  if(window.pageYOffset > 100){
-      document.querySelector(".navbar").classList.add("active");
-  }
-  else{
-    document.querySelector(".navbar").classList.remove("active");
-  }
-})
+
   return (
     <div className="Header">
     
@@ -81,7 +64,7 @@ window.addEventListener("scroll", () =>{
       </div>
     </div>
     
-    <div className="navbar flex pz__10 space__beetween"ref={switcherTab}>
+    <div className="navbar flex pz__10 space__beetween">
       <div
        className="navigation"
        style={{

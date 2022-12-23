@@ -56,9 +56,9 @@ function App() {
       },
     });
     
-    Store.dispatch(loadUser());
+     Store.dispatch(loadUser());
     
-    getStripeApiKey();
+   getStripeApiKey();
 
   }, []);
   return (

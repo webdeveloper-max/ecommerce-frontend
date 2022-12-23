@@ -143,7 +143,7 @@ const ProductDetails = ({match, history}) => {
                     <button onClick={decreaseQuantity}>-</button>
                     <input  type="number" readOnly value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
-                  </div>{" "}
+                  </div>{"   "}
                 </div>
                 <p className="stock__meta" style={{ paddingBottom: ".5vmax" }}>
                   <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
@@ -254,7 +254,7 @@ const ProductDetails = ({match, history}) => {
                 <div className="review__option">
                   {product.reviews &&
                     product.reviews.map((review) => (
-                      <ReviewCard review={review} />
+                      <ReviewCard review={review} key={review} />
                     ))}
                 </div>
               ) : (
@@ -296,17 +296,18 @@ const ProductDetails = ({match, history}) => {
                   <div>
                     <span
                       style={{
-                        color: "#222",
+                         color: "#222",
                         fontFamily: "Poppins,sans-serif",
-                        padding: "1vmax 0",
+                        padding: "1vmax 1",
                       }}
                     >
-                      Your Rating*
+                      Your Rating
                     </span>
                     <Rating 
                       onChange={(e) => setRating(e.target.value)}
                       value={rating}
                       size="large"
+                      name="number"
                     />
                     <div
                       style={{

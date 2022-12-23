@@ -15,8 +15,8 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
-}
+  -moz-appearance:textfield;
+} 
 iframe {
   z-index: 0!important;
   display: none!important;
@@ -181,7 +181,7 @@ label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLab
 }
 label.MuiRating-label {
   margin-top: .5vmax;
-   animation: none; 
+  animation: none;  
   width: unset;
   height: unset;
 }
