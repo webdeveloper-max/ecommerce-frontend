@@ -5,9 +5,9 @@ const Loading = () => {
     return (
         <div className="loading">
            <input type="checkbox" id="check" />
-           {/* <label for="check"> */}
+           <label for="check"> 
           <div className="check-icon"></div>
-          {/* </label> */}
+           </label> 
         </div>
     )
 }

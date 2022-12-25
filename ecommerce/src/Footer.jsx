@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="Footer flex space__around pz__15" style={{"borderTop":".3px solid rgba(21,21,21,0.5)"}}>
-      {/* Footer 1st part */}
+
       <div className="footer1st">
         <h1>Shoe shop</h1>
         <div className="location flex py__10">
@@ -35,7 +35,7 @@ const Footer = () => {
             <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
           </svg>
           <strong>Email:</strong>
-          <h6>testing12@gmail.com</h6>
+          <h6>adloyankarine@gmail.com</h6>
         </div>
 
         <div className="location flex py__10">
@@ -72,7 +72,7 @@ const Footer = () => {
         
     
       </div>
-      {/* Footer 2nd part */}
+      
       <div className="mobile">
         <div className="footer__2nd__part">
              <h5>Account</h5>
